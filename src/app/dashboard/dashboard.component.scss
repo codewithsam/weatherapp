@@ -1,0 +1,165 @@
+.page{
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("/assets/images/night.jpg");
+    background-size: cover;
+    position: relative;
+    padding: 30px;
+    .content-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .wrapper{
+        text-align: center;
+        color: #fff;
+    }
+    .hombtn{
+        margin-left: 30px;
+    }
+    .card{
+        background-color: rgba(131, 132, 131, 0.2);
+        border:1px solid #767079;
+        border-bottom: 0px solid transparent;
+        box-shadow: 3px 3px 4px rgba(30,30,30,0.5), -3px -3px 4px rgba(30,30,30,0.5);
+        width: 400px;
+        padding: 15px 15px 0px 15px;
+        .card__header{
+            text-align: center;
+        }
+        .card__content__list{
+            display: flex;
+            flex-direction: row;
+        }
+        .card__content__list{
+            .left{
+                flex-basis: 25%;
+            }
+            .middle{
+                flex-basis: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                h1{
+                    position: relative;
+                    top: -40px;
+                    font-size: 40px;
+                    padding: 0;
+                    margin: 0;
+                }
+                img{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            .right{
+                flex-basis: 25%;                
+            }
+        }
+        .card__content__list ul{
+            padding: 0;
+            margin: 0;
+            list-style: none outside none;
+            display: flex;
+            flex-direction: column;
+            li{
+                margin-bottom: 20px;
+                p{
+                    color: #fff;
+                    font-weight: bold;
+                }
+                span{
+                    color: #ccc;
+                }
+            }
+            p{
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+    }
+    .card--weather{
+        font-family: 'Open Sans', sans-serif;
+        color: #fff; 
+    }
+}
+.weather-tabs-container{
+    width: 100%;
+    width:auto;
+    
+    .weather-tabs{
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    .weather-tabs__item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 30px;
+        color: #fff;
+        text-align: center;
+        border-bottom: 1px solid #767079;
+        
+        h3{
+            font-size: 22px;
+            color: #eee;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+        }
+        h5{
+            font-size: 12px;
+            color: #ccc;
+            padding: 0;
+            margin: 0;
+            font-weight: normal;
+        }
+        p{
+            font-size: 24px;
+            padding: 0;
+            margin: 0;
+        }
+        &:hover{
+            background-color: rgba(30,30,30, 0.3);
+            cursor: pointer;
+        }
+    }
+    .weather-tabs__item.active{
+        border: 1px solid #767079;        
+    }
+}
+.content-weather-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.weather-tabs-content{
+    padding: 20px;
+    border: 1px solid #767079;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    color: #fff;
+
+    ul{
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+
+        li{
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

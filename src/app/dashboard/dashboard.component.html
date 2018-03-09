@@ -1,0 +1,69 @@
+<div class="page">
+
+  <div class="content">
+    <div class="content-main">
+      <div class="card card--weather">
+        <h6>Current Weather</h6>
+        <div class="card__header">
+          <h3>{{weatherData.name}},{{weatherData.sys.country}}</h3>
+          <h6>{{weatherData.dt * 1000 | date: 'dd-MM-yyyy HH:mm'}}</h6>
+        </div>
+        <div class="card__content">
+          <div class="card__content__list">
+            <div class="left">
+              <ul>
+                <li><p>{{weatherData.main.pressure }} hPa</p><span>pressure</span></li>
+                <li><p>{{weatherData.main.humidity}} %</p><span>humidity</span></li>
+                <li><p>{{weatherData.visibility}} m</p><span>visibility</span></li>              
+              </ul>
+            </div>
+            <div class="middle">
+              <img src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" alt="">
+              <h1>{{weatherData.main.temp - 273.15  | number : '1.2-2'}} &#8451; </h1>
+            </div>
+            <div class="right">
+                <ul>
+                  <li><p>{{weatherData.wind.deg}}</p><span>wind(deg)</span></li>
+                  <li><p>{{weatherData.wind.speed}} m/s</p><span>wind(speed)</span></li>
+                  <li><p>{{weatherData.clouds.all}} %</p><span>clouds</span></li>              
+                </ul>              
+            </div>          
+          </div>
+        </div>
+      </div>
+      <a href="/" class="btn btn-lg btn-default hombtn">GO TO HOME</a>
+    </div>
+    <div class="wrapper">
+      <h3>Weekly Weather</h3>
+        <div class="content-weather-list">
+            <div class="weather-tabs-content" *ngFor="let weather of combinedData">
+              <div class="row">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li>Pressure</li>
+                  <li>Humidity</li>
+                  <li>Ground level</li> 
+                  <li>Sea Level</li> 
+                  <li>wind</li> 
+                  <li>Temp</li>            
+                </ul>
+              </div>
+              <div class="row" *ngFor="let data of weather">
+                  <ul>
+                    <li>{{data.dt * 1000 | date: 'HH:mm'}}</li>
+                    <li><img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png" alt=""></li>
+                    <li>{{ data.main.pressure }}</li>
+                    <li>{{data.main.humidity }}</li>
+                    <li>{{data.main.grnd_level }}</li>
+                    <li>{{data.main.sea_level }}</li>
+                    <li>{{data.wind.speed }}</li>              
+                    <li>{{ data.main.temp - 273.15  | number : '1.2-2'}} &#8451; </li>              
+                  </ul>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+
+</div>

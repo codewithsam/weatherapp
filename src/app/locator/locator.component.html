@@ -1,0 +1,25 @@
+<div class="locator-page">
+    <div class="overlay"></div>
+    <div class="data">
+        <div class="header" *ngIf="gps">
+            <h1>LOOK INTO THE FUTURE</h1>
+            <h3>Be Smart Be Prepared</h3>
+            <button class="btn btn-lg btn-primary" (click)="getLocation()">Share Location And Enter</button>
+        </div>
+        <div class="form-locator" *ngIf="!gps">
+            <div class="alert alert-danger" role="alert">You denied the permissions to share your location. Please enter city name manually below</div>
+            <form [formGroup]="rForm" (ngSubmit)="submitLocation(rForm.value)" >
+                <div class="form-group">
+                    <input type="text" formControlName="city" class="form-control" placeholder="Enter City Name">                
+                    <div class="alert alert-warning" role="alert" *ngIf="!rForm.controls['city'].valid && rForm.controls['city'].touched">City name is required and should be atleast 3 letters long</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="postal" class="form-control" placeholder="Enter Postal Code">
+                    <div class="alert alert-warning" role="alert" *ngIf="!rForm.controls['postal'].valid && rForm.controls['postal'].touched">Postal Code is required and it should atleast 4 numbers long</div>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!rForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
